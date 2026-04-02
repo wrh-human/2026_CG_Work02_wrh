@@ -47,3 +47,16 @@ t^3 & t^2 & t & 1
 P_i \\ P_{i+1} \\ P_{i+2} \\ P_{i+3}
 \end{bmatrix}
 $$
+
+## 3. 项目架构与模块设计
+为了保证代码的健壮性与可维护性，本项目采用了**计算与渲染解耦**的架构设计。通过将CPU密集型的数学计算与GPU密集型的像素渲染分离，实现了高效的管线运作。
+
+### 3.1 目录结构
+```plaintext
+work2/
+├── main.py          # 核心程序：Taichi状态机、GPU内核及UI交互
+└── math_core.py     # 数学核心：CPU 端的Bézier与B-Spline算法实现
+└── videos           # 存放两个demo动图
+    ├── 必做demo.gif
+    └── 选做demo.gif           
+```
